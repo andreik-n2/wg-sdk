@@ -74,7 +74,7 @@ jobs:
         uses: golangci/golangci-lint-action@v3
         with:
           # keep in sync with local version
-          version: v1.52.2
+          version: v2.0.2
           args: --timeout 3m
 
       - name: Run unit and integration tests

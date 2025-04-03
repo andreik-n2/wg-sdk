@@ -787,7 +787,7 @@ func TestFunctionsHandler_Subscription(t *testing.T) {
 					}
 				case isPing:
 					for i := 0; i < 3; i++ {
-						_, _ = w.Write([]byte(fmt.Sprintf(`{"response":{"data":{"n":%d}}}`, i)))
+						_, _ = fmt.Fprintf(w, `{"response":{"data":{"n":%d}}}`, i)
 						_, _ = w.Write([]byte("\n\n"))
 						w.(http.Flusher).Flush()
 						hookServerRequestCount++

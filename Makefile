@@ -35,10 +35,10 @@ test-ts:
 test: test-go test-ts
 
 golang-ci:
-	 golangci-lint run
+	 go tool golangci-lint run
 
 golang-ci-fix:
-	 golangci-lint run --fix
+	 go tool golangci-lint run --fix
 
 install-proto:
 	go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28.1

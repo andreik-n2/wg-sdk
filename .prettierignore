@@ -43,3 +43,5 @@ packages/testsuite/apps/basic/.wundergraph/operations/weather/GetCityByName.grap
 
 examples/sveltekit-oidc-cookies-auth
 examples/sveltekit-todos
+
+vendor

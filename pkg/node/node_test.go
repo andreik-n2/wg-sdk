@@ -541,7 +541,7 @@ func federationPlanConfiguration(userServiceURL, productServiceURL, reviewServic
 					Subscription: &wgpb.GraphQLSubscriptionConfiguration{
 						Url: &wgpb.ConfigurationVariable{
 							Kind:                  wgpb.ConfigurationVariableKind_STATIC_CONFIGURATION_VARIABLE,
-							StaticVariableContent: strings.Replace(userServiceURL, "http", "ws", -1),
+							StaticVariableContent: strings.ReplaceAll(userServiceURL, "http", "ws"),
 						},
 					},
 					HooksConfiguration: &wgpb.GraphQLDataSourceHooksConfiguration{
@@ -590,7 +590,7 @@ func federationPlanConfiguration(userServiceURL, productServiceURL, reviewServic
 					Subscription: &wgpb.GraphQLSubscriptionConfiguration{
 						Url: &wgpb.ConfigurationVariable{
 							Kind:                  wgpb.ConfigurationVariableKind_STATIC_CONFIGURATION_VARIABLE,
-							StaticVariableContent: strings.Replace(productServiceURL, "http", "ws", -1),
+							StaticVariableContent: strings.ReplaceAll(productServiceURL, "http", "ws"),
 						},
 					},
 					HooksConfiguration: &wgpb.GraphQLDataSourceHooksConfiguration{
@@ -639,7 +639,7 @@ func federationPlanConfiguration(userServiceURL, productServiceURL, reviewServic
 					Subscription: &wgpb.GraphQLSubscriptionConfiguration{
 						Url: &wgpb.ConfigurationVariable{
 							Kind:                  wgpb.ConfigurationVariableKind_STATIC_CONFIGURATION_VARIABLE,
-							StaticVariableContent: strings.Replace(reviewServiceURL, "http", "ws", -1),
+							StaticVariableContent: strings.ReplaceAll(reviewServiceURL, "http", "ws"),
 						},
 					},
 					HooksConfiguration: &wgpb.GraphQLDataSourceHooksConfiguration{

@@ -94,7 +94,7 @@ func (h *GraphQLPlaygroundHandler) ServeHTTP(w http.ResponseWriter, _ *http.Requ
 	// so we can replace apiURL in the template with an empty string to use a relative
 	// URL access the GraphQL endpoint, removing the need for configuring the public
 	// URL to access the playground
-	tpl := strings.Replace(h.html, "{{apiURL}}", "", -1)
+	tpl := strings.ReplaceAll(h.html, "{{apiURL}}", "")
 	resp := []byte(tpl)
 
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")

@@ -20,7 +20,8 @@ func TestMetricsHandler(t *testing.T) {
 	m := metrics.NewPrometheus(prometheusPort)
 	go func() {
 		if err := m.Serve(); err != nil && err != metrics.ErrServerClosed {
-			t.Fatal(err)
+			t.Error(err)
+			return
 		}
 	}()
 	defer func() {

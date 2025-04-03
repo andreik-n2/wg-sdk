@@ -622,8 +622,8 @@ func generateQueryArgumentsAllowList(schema string) []string {
 }
 
 func cleanupJsonSchema(schema string) string {
-	schema = strings.Replace(schema, "/definitions/", "/$defs/", -1)
-	schema = strings.Replace(schema, "\"definitions\"", "\"$defs\"", -1)
+	schema = strings.ReplaceAll(schema, "/definitions/", "/$defs/")
+	schema = strings.ReplaceAll(schema, "\"definitions\"", "\"$defs\"")
 	return schema
 }
 

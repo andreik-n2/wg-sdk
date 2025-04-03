@@ -58,16 +58,16 @@ func TestETag(t *testing.T) {
 	headers.Set(r, &rc1, nil)
 	result1 := rc1.Result()
 	defer result1.Body.Close()
-	assert.Len(t, result1.Header["ETag"], 0)
+	assert.Len(t, result1.Header["Etag"], 0)
 
 	var rc2 httptest.ResponseRecorder
 	headers.Set(r, &rc2, []byte("something"))
 	result2 := rc2.Result()
 	defer result2.Body.Close()
-	assert.Len(t, result2.Header["ETag"], 1)
+	assert.Len(t, result2.Header["Etag"], 1)
 
 	// Our ETag headers should be weak etags
-	assert.Equal(t, "W", string(result2.Header["ETag"][0][0]))
+	assert.Equal(t, "W", string(result2.Header["Etag"][0][0]))
 }
 
 func TestNotModified(t *testing.T) {
@@ -80,7 +80,7 @@ func TestNotModified(t *testing.T) {
 	headers.Set(r, &rc1, []byte("something"))
 	response := rc1.Result()
 	defer response.Body.Close()
-	etag := response.Header["ETag"][0]
+	etag := response.Header["Etag"][0]
 	assert.NotEqual(t, "", etag)
 
 	var rc2 httptest.ResponseRecorder

@@ -99,7 +99,7 @@ func (c *Headers) Set(r *http.Request, w http.ResponseWriter, data []byte) {
 func (c *Headers) NotModified(r *http.Request, w http.ResponseWriter) bool {
 	if r != nil && (r.Method == "GET" || r.Method == "HEAD") {
 		ifNoneMatch := r.Header.Get("If-None-Match")
-		responseEtag := w.Header()["ETag"]
+		responseEtag := w.Header()["Etag"]
 		if len(responseEtag) > 0 && responseEtag[0] == ifNoneMatch {
 			w.WriteHeader(http.StatusNotModified)
 			return true
