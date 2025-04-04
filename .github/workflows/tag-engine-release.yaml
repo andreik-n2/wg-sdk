@@ -54,6 +54,6 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          repository: wundergraph/wundergraph
+          repository: andreik-n2/wg-sdk
           event-type: release-engine
           client-payload: '{"ref": "v${{ steps.tag.outputs.release_version }}"}'
