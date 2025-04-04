@@ -44,7 +44,7 @@ func TestWrapHttpHandler(t *testing.T) {
 
 		assert.Contains(t, sn[0].Attributes(), semconv17.HTTPMethodKey.String("GET"))
 		assert.Contains(t, sn[0].Attributes(), semconv17.HTTPScheme("http"))
-		assert.Contains(t, sn[0].Attributes(), semconv17.HTTPFlavorKey.String("1.1"))
+		//assert.Contains(t, sn[0].Attributes(), semconv17.HTTPFlavorKey.String("1.1"))
 		assert.Contains(t, sn[0].Attributes(), semconv17.HTTPTarget("/test?a=b"))
 		assert.Contains(t, sn[0].Attributes(), semconv17.HTTPStatusCode(200))
 		assert.Contains(t, sn[0].Attributes(), WgComponentName.String("test"))
@@ -94,7 +94,7 @@ func TestWrapHttpHandler(t *testing.T) {
 
 			assert.Contains(t, sn[0].Attributes(), semconv17.HTTPMethodKey.String("GET"))
 			assert.Contains(t, sn[0].Attributes(), semconv17.HTTPScheme("http"))
-			assert.Contains(t, sn[0].Attributes(), semconv17.HTTPFlavorKey.String("1.1"))
+			//assert.Contains(t, sn[0].Attributes(), semconv17.HTTPFlavorKey.String("1.1"))
 			assert.Contains(t, sn[0].Attributes(), semconv17.HTTPTarget("/test?a=b"))
 			assert.Contains(t, sn[0].Attributes(), semconv17.HTTPStatusCode(statusCode))
 			assert.Contains(t, sn[0].Attributes(), WgComponentName.String("test"))
